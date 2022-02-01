@@ -18,5 +18,6 @@ tasks:
     name: "Services"
     command: service nginx start &
              cd /workspace/magento2gitpod && /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf &
+             sudo /etc/init.d/supervisor start &&
   - name: "Terminal/SSH Start here"
     command: echo "Good luck. Happy coding and testing!"
