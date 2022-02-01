@@ -20,4 +20,4 @@ tasks:
              cd /workspace/magento2gitpod && /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf &
              sudo /etc/init.d/supervisor start
   - name: "Terminal/SSH Start here"
-    command: echo "Good luck. Happy coding and testing!"
+    command: chmod a+rwx m2-install.sh && ./m2-install.sh && clear && echo "Good luck. Happy coding and testing!"
