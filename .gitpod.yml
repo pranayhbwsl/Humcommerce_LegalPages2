@@ -1,2 +1,22 @@
 image:
   file: .gitpod.Dockerfile
+  ports:
+- port: 8002
+  visibility: public
+- port: 9001
+- port: 15672
+  visibility: public
+vscode:
+  extensions:
+    - TabNine.tabnine-vscode@3.4.14
+    - felixfbecker.php-debug@1.16.0
+tasks:
+  - openMode: split-right
+    name: "Installer and Services menu"
+    command: chmod a+rwx menu.sh && ./menu.sh
+  - openMode: tab-after
+    name: "Services"
+    command: service nginx start &
+             cd /workspace/magento2gitpod && /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf &
+  - name: "Terminal/SSH Start here"
+    command: echo "Good luck. Happy coding and testing!"
