@@ -30,6 +30,3 @@ php bin/magento config:set web/cookie/cookie_domain ".gitpod.io" --lock-config &
 n98-magerun2 cache:clean &&
 n98-magerun2 cache:flush &&
 redis-cli flushall &&
-
-echo "Click here and then Open Browser button  --------------------------------------------------------------"
-echo "
