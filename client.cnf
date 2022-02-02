@@ -1,10 +1,10 @@
 [client]
 host     = localhost
 user     = root
-password = nem4540
+password = admin@12345
 socket   = /var/run/mysqld/mysqld.sock
 [mysql_upgrade]
 host     = localhost
 user     = root
-password = nem4540
+password = admin@12345
 socket   = /var/run/mysqld/mysqld.sock

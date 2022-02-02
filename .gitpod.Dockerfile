@@ -56,7 +56,7 @@ RUN set -ex; \
 			"percona-server-server-$PERCONA_MAJOR/root-pass" \
 			"percona-server-server-$PERCONA_MAJOR/re-root-pass" \
 		; do \
-			sudo echo "percona-server-server-$PERCONA_MAJOR" "$key" password 'nem4540'; \
+			sudo echo "percona-server-server-$PERCONA_MAJOR" "$key" password 'admin@12345'; \
 		done; \
 	} | sudo debconf-set-selections; \
 	sudo apt-get update; \
