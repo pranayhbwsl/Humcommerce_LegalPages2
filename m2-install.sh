@@ -25,6 +25,5 @@ then
 
     n98-magerun2 cache:clean &&
     n98-magerun2 cache:flush &&
-    redis-cli flushall &&
-
+    redis-cli flushall
 fi
