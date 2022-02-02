@@ -1,0 +1,12 @@
+{
+    "humcommerce_legalpages": {
+        "column": {
+            "legalpage_entry_id": true,
+            "legalpage_entry_type": true,
+            "legalpage_entry_value": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

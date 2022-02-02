@@ -1,0 +1,12 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="humcommerce_legalpages" resource="default" engine="innodb"
+            comment="Humcommerce Legalpages Table">
+        <column xsi:type="smallint" name="legalpage_entry_id" unsigned="true" nullable="false" identity="true" comment="Legalpage Entry ID"/>
+        <column xsi:type="varchar" name="legalpage_entry_type" nullable="false" length="255" comment="Legalpage Entry Type"/>
+        <column xsi:type="longtext" name="legalpage_entry_value" nullable="false" comment="Legalpage Entry Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="legalpage_entry_id"/>
+        </constraint>
+    </table>
+</schema>

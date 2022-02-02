@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Humcommerce_LegalPages::main_menu" title="LegalPages" module="Humcommerce_LegalPages" sortOrder="20" resource="Humcommerce_LegalPages::menu" />
+        <add id="Humcommerce_LegalPages::wizard" title="Wizard" module="Humcommerce_LegalPages" sortOrder="10" parent="Humcommerce_LegalPages::main_menu" action="legalpages/wizard/index" resource="Humcommerce_LegalPages::menu"/>
+        <add id="Humcommerce_LegalPages::configuration" title="Configuration" module="Humcommerce_LegalPages" sortOrder="10" parent="Humcommerce_LegalPages::main_menu" action="admin/system_config/edit/section/humc_lp" resource="Humcommerce_LegalPages::config"/>
+    </menu>
+</config>

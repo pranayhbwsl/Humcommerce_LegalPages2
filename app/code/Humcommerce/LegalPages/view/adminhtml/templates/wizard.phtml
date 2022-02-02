@@ -1,0 +1,16 @@
+<?php
+$imagesPath = $block->getViewFileUrl('Humcommerce_LegalPages::images');
+
+?>
+<div id="app">
+</div>
+<script type="text/x-magento-init">
+    {
+        "#app": {
+            "Humcommerce_LegalPages/js/vue-wizard": {
+                "url" : "<?= $block->escapeUrl($block->getBaseUrl()).'admin/legalpages/result/result/' ?>",
+                "imagesPath" : "<?= $block->escapeHtml($imagesPath) ?>"
+            }
+        }
+    }
+</script>
