@@ -54,4 +54,9 @@ cd /workspace/Humcommerce_LegalPages2/app && mkdir -p code/Humcommerce && cd cod
 cd /workspace/Humcommerce_LegalPages2
 rm -rf .git
 
+php bin/magento indexer:reindex
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:flush
+
 
