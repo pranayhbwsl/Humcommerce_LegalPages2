@@ -1,4 +1,17 @@
 #!/bin/bash
+
+#removing module files from root
+folders=(.github Block Controller etc Helper Model Observer Setup Test view )
+files=(.gitignore composer.json LICENSE README.md registration.php)
+
+for files in "${folders[@]}"; do
+    rm -r "$files"
+done
+for file in "${files[@]}"; do
+    rm "$file"
+done
+
+#magento installation
 sudo composer selfupdate --2;
 cd /workspace/magento2gitpod &&
 composer config -g -a http-basic.repo.magento.com 64229a8ef905329a184da4f174597d25 a0df0bec06011c7f1e8ea8833ca7661e &&
@@ -31,3 +44,14 @@ php bin/magento config:set web/cookie/cookie_domain ".gitpod.io" --lock-config &
 n98-magerun2 cache:clean &&
 n98-magerun2 cache:flush &&
 redis-cli flushall
+
+#clonning module in the app/code/Humcommerce
+ORIGIN_VALUE=$(git config --get remote.origin.url)
+
+echo $ORIGIN_VALUE
+cd /workspace/magento2gitpod/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
+
+cd /workspace/magento2gitpod
+rm -rf .git
+
+cd /workspace/magento2gitpod/app/code/Humcommerce/LegalPages
