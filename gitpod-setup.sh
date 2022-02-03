@@ -45,10 +45,10 @@ n98-magerun2 cache:clean &&
 n98-magerun2 cache:flush &&
 redis-cli flushall
 
+echo $url
 #clonning module in the app/code/Humcommerce
 ORIGIN_VALUE=$(git config --get remote.origin.url)
 
-echo $ORIGIN_VALUE
 cd /workspace/Humcommerce_LegalPages2/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
 
 cd /workspace/Humcommerce_LegalPages2
