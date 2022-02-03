@@ -13,11 +13,11 @@ done
 
 #magento installation
 sudo composer selfupdate --2;
-cd /workspace/magento2gitpod &&
+cd /workspace/Humcommerce_LegalPages2 &&
 composer config -g -a http-basic.repo.magento.com 64229a8ef905329a184da4f174597d25 a0df0bec06011c7f1e8ea8833ca7661e &&
 composer create-project --no-interaction --no-progress --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.3 magento2
-cd magento2 && cp -avr .* /workspace/magento2gitpod;
-cd /workspace/magento2gitpod && rm -r -f magento2;
+cd magento2 && cp -avr .* /workspace/Humcommerce_LegalPages2;
+cd /workspace/Humcommerce_LegalPages2 && rm -r -f magento2;
 mysql -e 'create database magento2;';
 
 url=$(gp url | awk -F"//" {'print $2'}) && url+="/" && url="https://8002-"$url;
@@ -28,7 +28,7 @@ $ES_HOME79/bin/elasticsearch -d -p $ES_HOME79/pid -Ediscovery.type=single-node &
 sleep 15;
 
 mysql -u root -padmin@12345 -e 'create database magento2;' &&
-url=$(gp url | awk -F"//" {'print $2'}) && url+="/" && url="https://8002-"$url;cd /workspace/magento2gitpod && composer install -n && php bin/magento setup:install --db-name='magento2' --db-user='root' --db-password='admin@12345' --base-url=$url --backend-frontname='admin' --admin-user='admin' --admin-password='admin@12345' --admin-email='pranay.chahare@hbwsl.com' --admin-firstname='Admin' --admin-lastname='Admin' --use-rewrites='1' --use-secure='1' --base-url-secure=$url --use-secure-admin='1' --language='en_US' --db-host='127.0.0.1' --cleanup-database --timezone='America/New_York' --currency='USD' --session-save='redis'
+url=$(gp url | awk -F"//" {'print $2'}) && url+="/" && url="https://8002-"$url;cd /workspace/Humcommerce_LegalPages2 && composer install -n && php bin/magento setup:install --db-name='magento2' --db-user='root' --db-password='admin@12345' --base-url=$url --backend-frontname='admin' --admin-user='admin' --admin-password='admin@12345' --admin-email='pranay.chahare@hbwsl.com' --admin-firstname='Admin' --admin-lastname='Admin' --use-rewrites='1' --use-secure='1' --base-url-secure=$url --use-secure-admin='1' --language='en_US' --db-host='127.0.0.1' --cleanup-database --timezone='America/New_York' --currency='USD' --session-save='redis'
 
 n98-magerun2 module:disable Magento_Csp &&
 n98-magerun2 module:disable Magento_TwoFactorAuth &&
@@ -49,9 +49,9 @@ redis-cli flushall
 ORIGIN_VALUE=$(git config --get remote.origin.url)
 
 echo $ORIGIN_VALUE
-cd /workspace/magento2gitpod/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
+cd /workspace/Humcommerce_LegalPages2/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
 
-cd /workspace/magento2gitpod
+cd /workspace/Humcommerce_LegalPages2
 rm -rf .git
 
-cd /workspace/magento2gitpod/app/code/Humcommerce/LegalPages
+cd /workspace/Humcommerce_LegalPages2/app/code/Humcommerce/LegalPages
