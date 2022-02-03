@@ -11,10 +11,13 @@ vscode:
     - TabNine.tabnine-vscode@3.4.14
     - felixfbecker.php-debug@1.16.0
 tasks:
+  - openMode: split-right
+    name: "Installer and Services menu"
+    command: chmod a+rwx menu.sh && ./menu.sh
   - openMode: tab-after
     name: "Services"
     command: service nginx start &
              cd /workspace/magento2gitpod && /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf &
              sudo /etc/init.d/supervisor start
   - name: "Terminal/SSH Start here"
-    command: chmod a+rwx gitpod-setup.sh && ./gitpod-setup.sh && cd /workspace/Humcommerce_LegalPages2/app/code/Humcommerce/LegalPages && echo "Setup completed.."
+    command: echo "Setup completed.."
