@@ -52,6 +52,6 @@ echo $ORIGIN_VALUE
 cd /workspace/Humcommerce_LegalPages2/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
 
 cd /workspace/Humcommerce_LegalPages2
-rm -rf .git
+rm -rf .git && cd /workspace/Humcommerce_LegalPages2/app/code/Humcommerce/LegalPages
 
-cd /workspace/Humcommerce_LegalPages2/app/code/Humcommerce/LegalPages
+
