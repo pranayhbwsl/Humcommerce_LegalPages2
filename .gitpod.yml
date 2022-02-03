@@ -17,4 +17,4 @@ tasks:
              cd /workspace/magento2gitpod && /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf &
              sudo /etc/init.d/supervisor start
   - name: "Terminal/SSH Start here"
-    command: chmod a+rwx gitpod-setup.sh && ./gitpod-setup.sh && echo "Setup completed.."
+    command: chmod a+rwx gitpod-setup.sh && ./gitpod-setup.sh && cd /workspace/Humcommerce_LegalPages2/app/code/Humcommerce/LegalPages && echo "Setup completed.."
