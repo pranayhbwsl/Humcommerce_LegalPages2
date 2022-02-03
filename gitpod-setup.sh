@@ -52,7 +52,7 @@ ORIGIN_VALUE=$(git config --get remote.origin.url)
 cd /workspace/Humcommerce_LegalPages2/app && mkdir -p code/Humcommerce && cd code/Humcommerce && git clone $ORIGIN_VALUE && mv Humcommerce_LegalPages2 LegalPages
 
 cd /workspace/Humcommerce_LegalPages2
-rm -rf .git
+# rm -rf .git
 
 php bin/magento indexer:reindex
 php bin/magento setup:upgrade
