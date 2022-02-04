@@ -59,5 +59,10 @@ if [ ! -d "$DIR" ]; then
     php bin/magento setup:upgrade
     php bin/magento setup:static-content:deploy -f
     php bin/magento cache:flush
-fi
+else
+    redis-server &
+    $ES_HOME79/bin/elasticsearch -d -p $ES_HOME79/pid -Ediscovery.type=single-node &
+    sleep 15;
 
+    mysql -u root -padmin@12345 -e 'create database magento2;'
+fi
